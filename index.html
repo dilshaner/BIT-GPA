@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>GPA Calculator - Academic Year 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">GPA CALC</div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>GPA Calculator</h1>
+                <p>Calculate your GPA for Levels I, II, and III.</p>
+            </section>
+            <section class="calculator">
+                <div class="card">
+                    <div class="selectors">
+                        <div class="selector">
+                            <label for="level">Level:</label>
+                            <select id="level" onchange="updateSemesters()">
+                                <option value="1">Level I</option>
+                                <option value="2">Level II</option>
+                                <option value="3">Level III</option>
+                            </select>
+                        </div>
+                        <div class="selector">
+                            <label for="semester">Semester:</label>
+                            <select id="semester" onchange="updateCourseList()">
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="course-table">
+                        <div class="table-header">
+                            <span>Code</span>
+                            <span>Name</span>
+                            <span>Credits</span>
+                            <span>Grade</span>
+                        </div>
+                        <div id="course-list"></div>
+                    </div>
+                    <div class="results">
+                        <h2 id="gpa-result">Semester GPA: 0.00</h2>
+                        <p id="breakdown">Total GPA Credits: 0 | Grade Points: 0.00</p>
+                        <h2 id="cumulative-gpa">Cumulative GPA (Level): 0.00</h2>
+                        <button class="clear-btn" onclick="clearGrades()">Reset Grades</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p><strong>Disclaimer:</strong> This GPA calculator is based on the "Student Handbook Academic Year - 2024." It is an independent tool created for informational purposes only and has no official connection to the University of Colombo, Sri Lanka. Please consult your academic advisor for official GPA calculations.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
